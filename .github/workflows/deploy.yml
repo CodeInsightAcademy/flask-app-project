@@ -3,10 +3,10 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main
+      - main  # or your default branch
 
 permissions:
-  contents: write  # <-- This gives GITHUB_TOKEN permission to push
+  contents: write
   pages: write
   id-token: write
 
@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Pages
@@ -24,7 +24,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./  # Adjust this if your HTML is inside a subfolder
+          path: ./  # adjust if your HTML files are in a subfolder
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
