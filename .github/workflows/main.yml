@@ -9,7 +9,7 @@ jobs:
         uses: GitGuardian/ggshield-action@main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}  # Optional (remove if unused)
+          # GITGUARDIAN_API_KEY: ${{ secrets.GITGUARDIAN_API_KEY }}  # Optional (remove if unused)
 
   deploy:
     needs: build
